@@ -24,3 +24,18 @@ document.getElementById('a8c-delete-all__button').addEventListener('click', func
         }
       });
 });
+
+// dark mode toggle
+const darkModeToggle = document.getElementById('darkModeToggle');
+darkModeToggle.addEventListener('change', (e) => {
+    document.body.classList.toggle('dark-mode');
+    chrome.storage.sync.set({ darkMode: darkModeToggle.checked });
+});
+
+// restore dark mode setting
+chrome.storage.sync.get(['darkMode'], (data) => {
+    if (data.darkMode) {
+        darkModeToggle.checked = data.darkMode;
+        document.body.classList.add('dark-mode');
+    }
+});
