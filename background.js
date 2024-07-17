@@ -15,7 +15,7 @@ function updateRules(customHeaders) {
             const headers = data.customHeaders ? JSON.parse(data.customHeaders) : [];
             const requestHeaders = headers
                 .filter(header => header.enabled)
-                .map(header => ({ "header": header.name, "operation": "set", "value": header.value }));
+                .map(header => ({ "header": header.name.trim(), "operation": "set", "value": header.value }));
 
             // Clear existing rules and set new ones.
             chrome.declarativeNetRequest.updateDynamicRules({
