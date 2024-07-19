@@ -25,6 +25,19 @@ document.getElementById('a8c-delete-all__button').addEventListener('click', func
       });
 });
 
+// restore settings from storage on popup open.
+chrome.storage.sync.get(['darkMode', 'disablePlugin'], (data) => {
+  if (data.darkMode) {
+      darkModeToggle.checked = data.darkMode;
+      document.body.classList.add('dark-mode');
+  }
+
+  if (data.disablePlugin) {
+      disablePluginToggle.checked = data.disablePlugin;
+  }
+
+});
+
 // dark mode toggle
 const darkModeToggle = document.getElementById('darkModeToggle');
 darkModeToggle.addEventListener('change', (e) => {
@@ -32,10 +45,10 @@ darkModeToggle.addEventListener('change', (e) => {
     chrome.storage.sync.set({ darkMode: darkModeToggle.checked });
 });
 
-// restore dark mode setting
-chrome.storage.sync.get(['darkMode'], (data) => {
-    if (data.darkMode) {
-        darkModeToggle.checked = data.darkMode;
-        document.body.classList.add('dark-mode');
-    }
+// on #disable-plugin change, disable the plugin
+const disablePluginToggle = document.getElementById('disable-plugin');
+disablePluginToggle.addEventListener('change', function (e) {
+    chrome.storage.sync.set({ disablePlugin: disablePluginToggle.checked }, function () {
+        chrome.runtime.sendMessage({ type: 'updateRules', disablePlugin: disablePluginToggle.checked });
+    } );
 });

@@ -8,26 +8,32 @@
 </head>
 
 <body>
-    <div id="a8c-toolbar" class="toolbar--top">
-        <div id="a8c-toolbar__left">
-            <h1>GreenChile ModHeader</h1>
+    <div class="a8c-toolbar toolbar--top">
+        <div class="a8c-toolbar__left">
+            <h1 style="font-size: 1.8em;">GreenChile ModHeader</h1>
         </div>
-        <div id="a8c-toolbar__right">
-            <!-- dark mode toggle -->
-            <label class="switch">
-                <input type="checkbox" id="darkModeToggle" title="Toggle dark mode">
-                <span class="slider round"></span>
-            </label>
+        <div class="a8c-toolbar__right d-flex">
+            <div class="checkbox-wrapper">
+                <label for="darkModeToggle" class="first-label">Dark Mode</label>
+                <input type="checkbox" id="darkModeToggle" class="nice-checkbox"/>
+                <label for="darkModeToggle" class="toggle"><span></span></label>
+            </div>
+
+            <div class="checkbox-wrapper">
+                <label for="disable-plugin" class="first-label">Disable Rules</label>
+                <input type="checkbox" id="disable-plugin" class="nice-checkbox"/>
+                <label for="disable-plugin" class="toggle"><span></span></label>
+            </div>
         </div>
     </div>
     <div class="a8c-settings-table">
         <table-component></table-component>
     </div>
-    <div id="a8c-toolbar" class="toolbar--bottom">
-        <div id="a8c-toolbar__left">
+    <div class="a8c-toolbar toolbar--bottom">
+        <div class="a8c-toolbar__left">
             <button id="reloadPage" class="btn__style">Reload</button>
         </div>
-        <div id="a8c-toolbar__right">
+        <div class="a8c-toolbar__right">
             <button id="a8c-delete-all__button" class="btn__style">Delete everything</button>
         </div>
     </div>
