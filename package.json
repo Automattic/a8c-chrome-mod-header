@@ -1,0 +1,41 @@
+{
+  "name": "a8c-chrome-mod-header",
+  "version": "1.0.0",
+  "description": "This is a Chrome extension that allows you to modify request headers for all requests in a page. It can be useful for development, debugging and security testing.",
+  "main": "background.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Automattic/a8c-chrome-mod-header.git"
+  },
+  "keywords": [
+    "a8c",
+    "chrome",
+    "extension",
+    "modify-headers",
+    "modheader"
+  ],
+  "author": "Automattic team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Automattic/a8c-chrome-mod-header/issues"
+  },
+  "homepage": "https://github.com/Automattic/a8c-chrome-mod-header#readme",
+  "devDependencies": {
+    "@babel/preset-env": "^7.24.8",
+    "@babel/preset-react": "^7.24.7",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "jsdom": "^24.1.0"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "babel-jest"
+    }
+  }
+}
