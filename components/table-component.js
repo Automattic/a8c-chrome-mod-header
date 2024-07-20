@@ -119,55 +119,6 @@ class TableComponent extends HTMLElement {
 
     render() {
         this.innerHTML = `
-        <style>
-
-        #headersTable {
-            width: 100%;
-            border-collapse: collapse;
-        }
-
-        #headersTable th {
-            border-bottom: 1px solid #ddd;
-            padding: 10px;
-            text-align: left;
-        }
-
-        #headersTable td {
-            border-bottom: 1px solid #ddd;
-            padding: 10px;
-        }
-
-        #headersTable td input {
-            width: 100%;
-            padding: 5px;
-        }
-
-        .button--svg {
-            border: none;
-            text-decoration: none;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            height: 45px;
-            white-space: pre;
-            width: 45px;
-            cursor: pointer;
-
-        }
-
-        .button--svg svg {
-            width: 20px;
-            height: 20px;
-        }
-
-        .a8c-add__button {
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        </style>
         <table id="headersTable">
             <thead>
                 <tr>
