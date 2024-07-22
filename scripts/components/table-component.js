@@ -35,7 +35,7 @@ class TableComponent extends HTMLElement {
 		this.setupEventListeners();
 	}
 
-	// Event handling
+	// Event handling depends on bubbling, so we need to handle events on the parent element.
 	setupEventListeners() {
 		this.addEventListener( 'change', this.handleRowEvent.bind( this ) );
 		this.addEventListener( 'input', this.handleRowEvent.bind( this ) );
@@ -126,7 +126,7 @@ class TableComponent extends HTMLElement {
                     </button>
                     `
 						: `
-                    <button id="a8c-add__button" class="a8c-add__button button--svg" data-action="a8c-add__button"
+                    <button id="a8c-add-button" class="a8c-add__button button--svg" data-action="a8c-add__button"
                         data-tooltip="Add custom header" data-row-id="${ key }">
                         <!-- svg plus -->
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
