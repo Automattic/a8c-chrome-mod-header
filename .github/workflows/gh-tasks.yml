@@ -1,0 +1,45 @@
+name: Chrome Extension Package
+
+on:
+  push:
+    tags:
+      - 'v*.*.*' # Assuming semantic versioning with a 'v' prefix
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '20'
+        cache: 'npm'
+
+    - name: Cache Node modules
+      uses: actions/cache@v3
+      with:
+        path: ~/.npm
+        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+        restore-keys: |
+          ${{ runner.os }}-node-
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Lint
+      run: npm run lint:js
+
+    - name: Build Extension
+      run: npm run plugin-zip
+
+    - name: Archive Artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        name: chrome-extension
+        path: a8c-chrome-mod-header.zip

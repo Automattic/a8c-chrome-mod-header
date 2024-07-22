@@ -1,9 +1,8 @@
-import '../../test-setup.js';
-import TableComponent from '../../components/table-component.js';
-import HeaderController from '../../controllers/HeaderController.js';
+import TableComponent from '../../scripts/components/table-component.js';
+import HeaderController from '../../scripts/controllers/HeaderController.js';
 
 // mock HeaderController
-jest.mock('../../controllers/HeaderController.js', () => ({
+jest.mock('../../scripts/controllers/HeaderController.js', () => ({
     loadHeadersData: jest.fn().mockImplementation((callback) => {
         callback([{"enabled":true,"name":"x-test-header","value":"123"},{"enabled":false,"name":"x-test-header-2","value":"321"}]);
     }),

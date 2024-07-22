@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "a8c Modify Header Request",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "This is a simple Chrome extension that allows you to modify the headers of a request.",
     "background": {
         "service_worker": "background.js"
