@@ -54,10 +54,9 @@ describe('TableComponent', () => {
         // headersData is already loaded. Let's update the first row.
         const input = tableComponentEl.querySelector('#tr-0 .headerName');
         input.value = 'new-header';
-        input.dispatchEvent(new Event('input'));
+        input.dispatchEvent(new Event('input', { bubbles: true }));
 
-        // TODO: Fix this test
-        // expect(tableComponentEl.headersData[0].name).toBe('new-header');
+        expect(tableComponentEl.headersData[0].name).toBe('new-header');
     });
 
     test('should delete a row', () => {
@@ -71,12 +70,23 @@ describe('TableComponent', () => {
 
     test('should add a row', () => {
 
-        // headersData is already loaded. Let's add a row.
-        const addButton = tableComponentEl.querySelector('.a8c-add__button');
-        addButton.click();
+        const input = tableComponentEl.querySelector('#tr-2 .headerName');
+        input.value = 'new-header';
+        input.dispatchEvent(new Event('input', { bubbles: true }));
 
-        // TODO: Fix this test
-        // expect(tableComponentEl.headersData.length).toBe(3);
+        const enableCheckbox = tableComponentEl.querySelector('#tr-2 .enableHeader');
+        enableCheckbox.checked = true;
+        enableCheckbox.dispatchEvent(new Event('change', { bubbles: true }));
+
+        const valueInput = tableComponentEl.querySelector('#tr-2 .headerValue');
+        valueInput.value = 'new-value';
+        valueInput.dispatchEvent(new Event('input', { bubbles: true }));
+
+        // headersData is already loaded. Let's add a row.
+        const addButton = tableComponentEl.querySelector('#tr-2 .a8c-add__button');        
+        addButton.dispatchEvent(new Event('click', { bubbles: true }));
+
+        expect(tableComponentEl.headersData.length).toBe(3);
     });
 
 });

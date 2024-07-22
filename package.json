@@ -10,6 +10,8 @@
     "lint:css:fix": "wp-scripts lint-style --fix",
 		"lint:js": "wp-scripts lint-js ./scripts",
     "lint:js:fix": "wp-scripts lint-js ./scripts --fix",
+    "test": "wp-scripts test-unit-js",
+    "test:unit:debug": "wp-scripts --inspect-brk test-unit-js --runInBand --no-cache",
     "test:unit": "wp-scripts test-unit-js",
 		"test:unit:watch": "wp-scripts test-unit-js --watch",
     "plugin-zip": "wp-scripts plugin-zip"
