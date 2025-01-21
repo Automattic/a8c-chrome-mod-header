@@ -1,22 +1,31 @@
 {
   "name": "a8c-chrome-mod-header",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "This is a Chrome extension that allows you to modify request headers for all requests in a page. It can be useful for development, debugging and security testing.",
   "scripts": {
-		"build": "wp-scripts build",
-		"check-engines": "wp-scripts check-engines",
-		"check-licenses": "wp-scripts check-licenses",
-		"lint:css": "wp-scripts lint-style",
+    "build": "wp-scripts build",
+    "check-engines": "wp-scripts check-engines",
+    "check-licenses": "wp-scripts check-licenses",
+    "lint:css": "wp-scripts lint-style",
     "lint:css:fix": "wp-scripts lint-style --fix",
-		"lint:js": "wp-scripts lint-js ./scripts",
+    "lint:js": "wp-scripts lint-js ./scripts",
     "lint:js:fix": "wp-scripts lint-js ./scripts --fix",
     "test": "wp-scripts test-unit-js",
     "test:unit:debug": "wp-scripts --inspect-brk test-unit-js --runInBand --no-cache",
     "test:unit": "wp-scripts test-unit-js",
-		"test:unit:watch": "wp-scripts test-unit-js --watch",
+    "test:unit:watch": "wp-scripts test-unit-js --watch",
     "plugin-zip": "wp-scripts plugin-zip"
-	},
-  "files": [ "icons", "background.js", "manifest.json", "popup.html", "popup.js", "popup.css", "scripts", "screenshot.png" ],
+  },
+  "files": [
+    "icons",
+    "background.js",
+    "manifest.json",
+    "popup.html",
+    "popup.js",
+    "popup.css",
+    "scripts",
+    "screenshot.png"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Automattic/a8c-chrome-mod-header.git"
@@ -35,6 +44,6 @@
   },
   "homepage": "https://github.com/Automattic/a8c-chrome-mod-header#readme",
   "devDependencies": {
-    "@wordpress/scripts": "^28.3.0"
+    "@wordpress/scripts": "^30.9.0"
   }
 }
